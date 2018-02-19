@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne = {
+var articles = { 
+articleOne : {
   title:'Article One',
   heading:'Article One',
   date:'2 SEP ,2012',
@@ -17,6 +18,31 @@ var articleOne = {
                 </p>    
     
     `
+},
+articleTwo : {
+  title:'Article Two',
+  heading:'Article Two',
+  date:'2 NOV ,2012',
+  content: `            <p>
+                  Shivaji Bhonsle (Marathi [ʃiʋaˑɟiˑ bʱoˑs(ə)leˑ]; c. 1627/1630[1] – 3 April 1680) was an Indian warrior king and a member of the Bhonsle Maratha clan. Shivaji carved out an enclave from the declining Adilshahi sultanate of Bijapur that formed the genesis of the Maratha Empire. In 1674, he was formally crowned as the Chhatrapati (Monarch) of his realm at Raigad.  
+                <p>    
+                <p>
+                   Shivaji established a competent and progressive civil rule with the help of a disciplined military and well-structured administrative organisations. He innovated military tactics, pioneering unconventional methods which leveraged strategic factors like geography, speed, and surprise and focused pinpoint attacks to defeat his larger and more powerful enemies. He revived ancient Hindu political traditions and court conventions and promoted the usage of Marathi and Sanskrit, rather than Persian, in court and administration. 
+                </p>    
+    
+    `
+},
+articleThree : {
+    title:'Article Three',
+  heading:'Article Three',
+  date:'13 AUG ,2012',
+  content: `   
+                <p>
+                   Shivaji established a competent and progressive civil rule with the help of a disciplined military and well-structured administrative organisations. He innovated military tactics, pioneering unconventional methods which leveraged strategic factors like geography, speed, and surprise and focused pinpoint attacks to defeat his larger and more powerful enemies. He revived ancient Hindu political traditions and court conventions and promoted the usage of Marathi and Sanskrit, rather than Persian, in court and administration. 
+                </p>    
+    
+    `
+}
 };
 function createTemplate(data){
     var title = data.title;
