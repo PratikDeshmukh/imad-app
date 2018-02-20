@@ -5,6 +5,16 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+
+var articleOne = {
+  title:'Article One',
+  heading:'Article One',
+  date:'2 SEP ,2012',
+  content:` <p>
+                Hey this is pd
+            </p>
+            `
+};            
 function createTemplate(data){
     var title = data.title;
     var heading = data.heading;
