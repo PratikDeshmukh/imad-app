@@ -17,7 +17,7 @@ button.onclick = function(){
         }
     };
     
-    request.open('GET','http://pratikdeshmukh13-imad.hasura-app.io/counter',true);
+    request.open('GET','http://pratikdeshmukh13.imad.hasura-app.io/counter',true);
     request.send(null);
     
 };
