@@ -61,7 +61,7 @@ function createTemplate(data){
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-  console.log('hi entere');
+  
 });
 
 app.get('/article-one', function( req, res) {
@@ -85,23 +85,28 @@ app.get('/submit-name', function( req, res) {
 
 app.get('/article-two', function( req, res) {
     res.sendFile(path.join(__dirname,'article-two.html'));
+    console.log('hi entere');
 });
 
 app.get('/article-three', function( req, res) {
     res.sendFile(path.join(__dirname,'article-three.html'));
+    console.log('hi entere');
 });
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
+  console.log('hi entere');
 });
 
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+  console.log('hi entere');
 });
 
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  console.log('hi entere');
 });
 
 
