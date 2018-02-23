@@ -24,19 +24,33 @@ button.onclick = function(){
 };
 
 //submit names
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+
 var submit = document.getElementById('submit_btn');
 submit.onclick = function(){
     
-    var names = ['Pratik','Madhura','Kamal'];
-    var list = '';
+    var request = new XMLHttpRequest();
     
-    for(var i=0; i< names.length; i++){
-        list += '<li>'+ names[i] + '</li>';
-    }
+    request.onreadystatechange = function(){
+        if (request.readyState === XMLHttpRequest.DONE){
+            if(request.status === 200){
+                var names = ['Pratik','Madhura','Kamal'];
+                var list = '';
     
-    var ul = document.getElementById('namelist');
-    ul.innerHTML = list;
+                for(var i=0; i< names.length; i++){
+                    list += '<li>'+ names[i] + '</li>';
+                }
+    
+                var ul = document.getElementById('namelist');
+                ul.innerHTML = list;                      
+            }
+        }
+    };
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
+    request.open('GET','http://pratikdeshmukh13.imad.hasura-app.io/',true);
+    request.send(null);
+    
+    
+    
 };
 
