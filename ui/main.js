@@ -33,7 +33,7 @@ submit.onclick = function(){
     request.onreadystatechange = function(){
         if (request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
-                var names = ['Pratik','Madhura','Kamal'];
+                var names = reqeust.responseText;
                 var list = '';
     
                 for(var i=0; i< names.length; i++){
@@ -47,7 +47,7 @@ submit.onclick = function(){
     };
     var nameInput = document.getElementById('name');
     var name = nameInput.value;
-    request.open('GET','http://pratikdeshmukh13.imad.hasura-app.io/',true);
+    request.open('GET','http://pratikdeshmukh13.imad.hasura-app.io/submit-name?name='+name,true);
     request.send(null);
     
     
