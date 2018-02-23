@@ -8,7 +8,7 @@ button.onclick = function(){
     var request = new XMLHttpRequest();
     
     request.onreadystatechange = function(){
-        debugger;
+      console.log("response came");
         if (request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
                 var counter = request.responseText;
@@ -18,7 +18,7 @@ button.onclick = function(){
             }
         }
     };
-    
+     console.log("request sent ");
     request.open('GET','http://pratikdeshmukh13.imad.hasura-app.io/counter',true);
     request.send(null);
     
