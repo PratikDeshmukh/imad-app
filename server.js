@@ -75,8 +75,8 @@ app.get('/', function (req, res) {
 app.get('/article-one', function( req, res) {
     
      
-    var name = "article-one";
-    pool.query("select * from test where id=1",function(err,result){
+    var name = 'article-one';
+    pool.query("select * from test where title="+name,function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }else{
