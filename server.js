@@ -12,6 +12,7 @@ var config = {
     port:'5432',
     password: process.env.DB_PASSWORD
 };
+var pool = new Pool(config);
 
 var articleOne = {
   title:'Article One',
@@ -72,9 +73,23 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article-one', function( req, res) {
-    res.send(createTemplate(articleOne));
+    
+     
+    
+    pool.query("select * from test where title = article-one",function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }else{
+             if(result.rows.length === 0){
+                 res.status(404).send('Article not found');
+             }else{
+                 var articleData = result.rows[0];
+                 res.send(createTemplate(articleData));
+             }
+        }
+    });    
+    //res.send(createTemplate(articleOne));
 });
-var pool = new Pool(config);
 app.get('/test-db', function( req, res) {
     
     pool.query('SELECT * FROM tag',function(err,result){
