@@ -76,7 +76,7 @@ app.get('/article-one', function( req, res) {
     
      
     var name = 'article-one';
-    pool.query("select * from test where title='"+name+"'",function(err,result){
+    pool.query("select * from test where title=$1",[name],function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }else{
