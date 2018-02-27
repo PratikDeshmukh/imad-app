@@ -77,7 +77,7 @@ app.get('/article-one', function( req, res) {
 var pool = new Pool(config);
 app.get('/test-db', function( req, res) {
     
-    pool.query('select * article',function(err,result){
+    pool.query('select * user',function(err,result){
         if(err){
             res.status(500).send(err.toString());
         }else{
