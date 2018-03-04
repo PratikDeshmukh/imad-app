@@ -78,9 +78,8 @@ login.onclick = function(){
     var password = document.getElementById('password').value;
     //console.log(username);
     //console.log(password);
+    
      request.open('POST','http://pratikdeshmukh13.imad.hasura-app.io/create-user',true);
-
-   
     request.setRequestHeader('Content-type','application/json');
     request.send(JSON.stringify({username: username, password: password}));
     
