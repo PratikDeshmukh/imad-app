@@ -107,7 +107,7 @@ app.post('/login',function(req,res){
     //JSON
     var username = req.body.username;
     var password = req.body.password;
-    console.log(username);
+    console.log("pratik");
     console.log(password);
 
     
