@@ -107,7 +107,9 @@ app.get('/login',function(req,res){
     //JSON
     var username = req.body.username;
     var password = req.body.password;
-    
+    console.log(username);
+    console.log(password);
+
     
     pool.query('select * from user1 where username = $1',[username],function(err,result){
         if(err){
