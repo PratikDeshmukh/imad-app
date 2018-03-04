@@ -76,8 +76,8 @@ login.onclick = function(){
     };
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
-    console.log(username);
-    console.log(password);
+    //console.log(username);
+    //console.log(password);
 
     request.open('GET','http://pratikdeshmukh13.imad.hasura-app.io/login',true);
     request.setRequestHeader('Content-type','application/json');
