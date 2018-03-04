@@ -110,9 +110,10 @@ app.post('/login',function(req,res){
     //res.send(username);
     //console.log(password);
     var name = 'pratik';
-    pool.query('select * from user1',function(err,result){
+    pool.query('select * from user1 where username = $1',[username],function(err,result){
         if(err){
-            res.status(500).send(err.toString());
+            console.log(err);
+            res.status(502).send(err.toString());
         }else{
             if(result.rows.length === 0)
             {
