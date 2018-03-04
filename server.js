@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var app = express();
+var crypto = require('crypto');
 app.use(morgan('combined'));
 
 var config = {
@@ -142,7 +143,16 @@ app.get('/ui/madi.png', function (req, res) {
   console.log('hi entere');
 });
 
+function hash(input,salt){
+    var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
+    return hashd.toString();
+}
 
+app.get('hash/:input',function(req,res){
+    var hashString = hash(req.params.input,'this-is-a-string');
+    res.send(hashString);
+    
+});
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
