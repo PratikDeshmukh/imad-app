@@ -77,7 +77,7 @@ function hash(input,salt){
     return hashd.toString();
 }
 
-app.get('hash/:input',function(req,res){
+app.get('/hash/:input',function(req,res){
     var hashString = hash(req.params.input,'this-is-a-string');
     res.send(hashString);
     
