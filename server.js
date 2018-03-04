@@ -106,7 +106,8 @@ app.post('/create-user',function(req,res){
     //res.send(username);
     //console.log(password);
     var name = 'pratik';
-    pool.query('select * from user1 where username = $1',[username],function(err,result){
+    console.log("Entered Login");
+   /* pool.query('select * from user1 where username = $1',[username],function(err,result){
         if(err){
             console.log(err);
             res.status(502).send(err.toString());
@@ -130,7 +131,7 @@ app.post('/create-user',function(req,res){
                  //res.send('User created Successfully '+ username);
              }
         
-    });
+    });*/
     
 });
 
