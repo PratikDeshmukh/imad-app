@@ -103,7 +103,7 @@ app.post('/create-user',function(req,res){
     });
 });
 
-app.post('/login',function(req,res){
+app.post('/login-user',function(req,res){
     //JSON
     var username = req.body.username;
     var password = req.body.password;
